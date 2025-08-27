@@ -1,0 +1,23 @@
+# List of success codes
+SUCCESS_CODES = [100, 0, 200 201, 10000]
+
+def is_transaction_successful(code):
+    """
+    Check if the transaction code indicates success.
+    
+    Args:
+        code (int): Transaction response code.
+        
+    Returns:
+        bool: True if code indicates success, False otherwise.
+    """
+    return code in SUCCESS_CODES
+
+# Example usage
+transaction_codes = [100, 105, 200, 400, 10000, 999]
+
+for code in transaction_codes:
+    if is_transaction_successful(code):
+        print(f"Transaction with code {code} was successful.")
+    else:
+        print(f"Transaction with code {code} failed or requires review.")
